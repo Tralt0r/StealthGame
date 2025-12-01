@@ -1,0 +1,4 @@
+repository "StealthGame/StealthGame@2475875006292@cloud"
+  path "/"
+    br "/main"
+    co "/main"
