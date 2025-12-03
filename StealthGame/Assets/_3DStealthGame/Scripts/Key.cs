@@ -9,7 +9,7 @@ namespace StealthGame
 
         private void OnTriggerEnter(Collider other)
         {
-            PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+            PlayerMovement1 player = other.gameObject.GetComponent<PlayerMovement1>();
 
             //this wasn't a player
             if (player == null)

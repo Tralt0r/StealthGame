@@ -9,7 +9,7 @@ namespace StealthGame
     
         private void OnCollisionEnter(Collision other)
         {
-            PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+            PlayerMovement1 player = other.gameObject.GetComponent<PlayerMovement1>();
 
             if (player == null)
                 return;

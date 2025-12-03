@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17b4f6ad0424b14e8c89205485fca26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Observer
+  gameEnding: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &4219132130198257833
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,9 +111,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6794559014468553798}
     m_Modifications:
+    - target: {fileID: -1860425685390847045, guid: d3312d02a690eda48bd6807bf5c78084,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
       propertyPath: m_Name
       value: Gargoyle_Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
       propertyPath: m_LocalPosition.x

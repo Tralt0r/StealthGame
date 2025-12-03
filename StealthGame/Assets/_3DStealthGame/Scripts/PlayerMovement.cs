@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
     Animator m_Animator;
     public InputAction MoveAction;
+    public AudioSource m_AudioSource;
+    public List<string> m_OwnedKeys = new List<string>();
 
     public float walkSpeed = 1.0f;
     public float turnSpeed = 20f;
@@ -17,9 +19,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Start ()
     {
+        m_AudioSource = GetComponent<AudioSource>();
         m_Animator = GetComponent<Animator> ();
         m_Rigidbody = GetComponent<Rigidbody> ();
         MoveAction.Enable();
+    }
+
+    public void AddKey(string keyName)
+    {
+        m_OwnedKeys.Add(keyName);
+    }
+
+    public bool OwnKey(string keyName)
+    {
+        return m_OwnedKeys.Contains(keyName);
     }
 
     void FixedUpdate ()
@@ -41,5 +54,16 @@ public class PlayerMovement : MonoBehaviour
         
         m_Rigidbody.MoveRotation (m_Rotation);
         m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * walkSpeed * Time.deltaTime);
+        if (isWalking)
+        {
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else
+        {
+            m_AudioSource.Stop();
+        }
     }
 }
