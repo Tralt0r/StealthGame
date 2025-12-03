@@ -50,7 +50,7 @@ public class GameEnding : MonoBehaviour
         }
     }
 
-    void EndLevel (VisualElement element, bool doRestart, AudioSource audioSource)
+    public void EndLevel (VisualElement element, bool doRestart, AudioSource audioSource)
     {
         if (!m_HasAudioPlayed)
         {

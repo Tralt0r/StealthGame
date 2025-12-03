@@ -23,6 +23,7 @@ public class PlayerMovement1 : MonoBehaviour
         m_Animator = GetComponent<Animator> ();
         m_Rigidbody = GetComponent<Rigidbody> ();
         MoveAction.Enable();
+        m_AudioSource.pitch = 1;
     }
 
     public void AddKey(string keyName)
@@ -64,6 +65,16 @@ public class PlayerMovement1 : MonoBehaviour
         else
         {
             m_AudioSource.Stop();
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            walkSpeed = 3.0f;
+            m_AudioSource.pitch = 1.5f;
+        }
+        else
+        {
+            walkSpeed = 1.0f;
+            m_AudioSource.pitch = 1;
         }
     }
 }
